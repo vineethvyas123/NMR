@@ -1,4 +1,5 @@
-import { motion } from "motion/react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
 interface SplitHeroProps {
   onJoinClick: () => void;
@@ -6,6 +7,8 @@ interface SplitHeroProps {
 }
 
 export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProps) {
+  const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen pt-16 grid grid-cols-1 lg:grid-cols-12 overflow-hidden bg-parchment" id="hero">
       
@@ -77,8 +80,18 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
       </div>
 
       {/* RIGHT SECTION (5 COLS on lg) - Aesthetic Portal panel */}
-      <div className="lg:col-span-5 bg-ink relative min-h-[450px] lg:min-h-0 flex flex-col justify-between p-8 md:p-12 lg:p-16 select-none overflow-hidden">
+      <div className="lg:col-span-5 bg-ink relative min-h-[450px] lg:min-h-0 flex flex-col justify-between p-8 md:p-12 lg:p-16 select-none overflow-hidden group">
         
+        {/* Background Rally Image with subtle monochrome opacity that scales on group hover */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img 
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200" 
+            alt="Crowd Rally Overlay"
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover grayscale opacity-[0.12] contrast-150 transition-transform duration-1000 ease-out scale-100 group-hover:scale-110"
+          />
+        </div>
+
         {/* Saffron radial glow overlay */}
         <div 
           className="absolute inset-0 pointer-events-none opacity-40 mix-blend-screen"
@@ -92,37 +105,49 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
              style={{ backgroundImage: 'radial-gradient(#F0EBE0 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
         {/* Top-Right Decorative Lead Ribbon */}
-        <div className="absolute top-10 right-0 py-1.5 px-6 bg-saffron-light/10 border-l border-saffron text-saffron-mid text-[10px] tracking-widest font-mono uppercase">
+        <div className="absolute top-10 right-0 py-1.5 px-6 bg-saffron-light/10 border-l border-saffron text-saffron-mid text-[10px] tracking-widest font-mono uppercase transition-colors duration-300 group-hover:bg-saffron/10">
           MEDAK 2024 CANDIDATE
         </div>
 
         {/* Centered Decorative Monogram Placeholder for Photo */}
-        <div className="my-auto flex flex-col items-center justify-center relative py-12">
+        <div className="my-auto flex flex-col items-center justify-center relative py-12 z-10">
           {/* Framed Circle */}
-          <div className="w-56 h-56 md:w-64 md:h-64 rounded-full border border-saffron-mid/20 flex items-center justify-center relative p-2 shadow-2xl backdrop-blur-sm">
+          <div 
+            onClick={() => setIsPortfolioOpen(true)}
+            className="w-56 h-56 md:w-64 md:h-64 rounded-full border border-saffron-mid/20 flex items-center justify-center relative p-2 shadow-2xl backdrop-blur-sm transition-transform duration-500 group-hover:scale-[1.04] group-hover:border-saffron/40 cursor-zoom-in"
+            title="Click to view official campaign portfolio photo"
+            id="campaign-portrait-trigger"
+          >
             {/* Spinning decorative orbit border */}
-            <div className="absolute inset-0 rounded-full border border-dashed border-saffron/30 animate-[spin_100s_linear_infinite]" />
+            <div className="absolute inset-0 rounded-full border border-dashed border-saffron/30 animate-[spin_100s_linear_infinite] group-hover:animate-[spin_40s_linear_infinite] group-hover:border-saffron/60" />
             
-            {/* Inner background container with gradient */}
-            <div className="w-full h-full rounded-full bg-gradient-to-tr from-saffron-light/5 via-saffron-light/15 to-saffron-light/5 flex flex-col items-center justify-center relative">
-              <span className="font-serif text-5xl md:text-6xl font-extralight tracking-widest text-saffron-mid">
-                NM
-              </span>
-              <div className="w-8 h-[1px] bg-saffron my-2" />
-              <div className="text-[10px] tracking-widest uppercase font-mono text-[#F0EBE0]">
-                Mudiraj
+            {/* Inner portrait container of Neelam Madhu Mudiraj */}
+            <div className="w-full h-full rounded-full overflow-hidden relative border border-saffron/20 bg-ink">
+              <img 
+                src="https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?auto=format&fit=crop&q=80&w=600"
+                alt="Neelam Madhu Mudiraj dynamic campaign portrait"
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F0E0B]/90 via-[#0F0E0B]/35 to-transparent flex flex-col items-center justify-end pb-5 transition-opacity duration-300">
+                <span className="text-[#FAF7F2] text-[11px] font-semibold tracking-widest font-mono uppercase">
+                  NEELAM MADHU
+                </span>
+                <span className="text-saffron-mid text-[8px] tracking-widest uppercase font-mono font-medium mt-0.5">
+                  MUDIRAJ
+                </span>
               </div>
             </div>
           </div>
           <div className="mt-4 text-center">
-            <p className="text-xs font-mono tracking-widest text-[#FAF7F2]/50 uppercase">
-              REPRESENTING THE PEOPLE'S WILL
+            <p className="text-xs font-mono tracking-widest text-[#FAF7F2]/40 uppercase transition-colors duration-300 group-hover:text-saffron-mid cursor-pointer" onClick={() => setIsPortfolioOpen(true)}>
+              [ CLICK TO ENLARGE PORTRAIT ]
             </p>
           </div>
         </div>
 
         {/* Bottom Floating Stats - Grid Layout with clear fine lines */}
-        <div className="relative z-10 w-full bg-[#FAF7F2] border border-ink/10 p-4 shadow-xl grid grid-cols-3 text-center" style={{ borderWidth: '0.5px' }}>
+        <div className="relative z-10 w-full bg-[#FAF7F2] border border-ink/10 p-4 shadow-xl grid grid-cols-3 text-center transition-transform duration-500 group-hover:translate-y-[-4px] group-hover:shadow-2xl" style={{ borderWidth: '0.5px' }}>
           
           <div className="border-r border-ink/15 py-1">
             <span className="block text-2xl md:text-3xl font-serif text-saffron font-bold leading-none">
@@ -155,6 +180,145 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
 
       </div>
 
+      {/* PORTFOLIO LIGHTBOX VIEW */}
+      <AnimatePresence>
+        {isPortfolioOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-ink/90 backdrop-blur-md z-50 flex items-center justify-center p-4 md:p-6"
+            onClick={() => setIsPortfolioOpen(false)}
+            id="portfolio-lightbox"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 350 }}
+              className="bg-parchment max-w-4xl w-full border border-saffron-mid/20 shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 text-ink"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Image Column */}
+              <div className="relative h-72 md:h-[500px] bg-ink">
+                <img 
+                  src="https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?auto=format&fit=crop&q=80&w=800"
+                  alt="Neelam Madhu Mudiraj Close Up Portfolio Photograph"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent flex items-end p-6">
+                  <div>
+                    <span className="text-saffron font-semibold tracking-widest text-xs uppercase block">
+                      OFFICIAL CAMPAIGN COVER
+                    </span>
+                    <h4 className="text-parchment font-serif text-2xl font-bold mt-1">
+                      Neelam Madhu Mudiraj
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              {/* Text / Stats Details Column */}
+              <div className="p-6 md:p-10 flex flex-col justify-between relative bg-parchment">
+                
+                {/* Close Button */}
+                <button 
+                  onClick={() => setIsPortfolioOpen(false)}
+                  className="absolute top-4 right-4 text-ink/40 hover:text-saffron hover:rotate-90 transition-all duration-300 p-2"
+                  aria-label="Close portfolio view"
+                  id="close-lightbox"
+                >
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+
+                <div className="space-y-6">
+                  <div>
+                    <span className="text-[10px] font-mono tracking-widest text-saffron uppercase block">
+                      INDIAN NATIONAL CONGRESS
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-serif text-ink font-bold tracking-tight mt-1">
+                      Campaign Portrait Dossier
+                    </h3>
+                  </div>
+
+                  <p className="text-xs md:text-sm text-ink-80 leading-relaxed font-sans">
+                    Captured during his active constituency outreach program across Medak, Telangana. 
+                    This official campaign cover highlights his warm accessibility, deep integrity, 
+                    and persistent grassroots commitment to public representation.
+                  </p>
+
+                  <div className="border-t border-b border-ink/10 py-4 my-2 grid grid-cols-2 gap-4" style={{ borderWidth: '0.5px 0' }}>
+                    <div>
+                      <span className="block text-[10px] tracking-widest text-ink-50 uppercase font-mono">
+                        POLITICAL PARTY
+                      </span>
+                      <span className="block text-sm font-serif font-bold text-ink mt-0.5">
+                        Congress (INC)
+                      </span>
+                    </div>
+                    <div>
+                      <span className="block text-[10px] tracking-widest text-ink-50 uppercase font-mono">
+                        NATIVE DISTRICT
+                      </span>
+                      <span className="block text-sm font-serif font-bold text-ink mt-0.5">
+                        Sangareddy, TS
+                      </span>
+                    </div>
+                    <div>
+                      <span className="block text-[10px] tracking-widest text-ink-50 uppercase font-mono">
+                        KEY CONSTITUENCY
+                      </span>
+                      <span className="block text-sm font-serif font-bold text-ink mt-0.5">
+                        Patancheru / Medak
+                      </span>
+                    </div>
+                    <div>
+                      <span className="block text-[10px] tracking-widest text-ink-50 uppercase font-mono">
+                        DEMOCRATIC RUN
+                      </span>
+                      <span className="block text-sm font-serif font-bold text-ink mt-0.5">
+                        Lok Sabha 2024
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Social Handles */}
+                  <div className="space-y-2">
+                    <span className="block text-[10px] tracking-widest text-ink-50 uppercase font-mono">
+                      OFFICIAL SOCIAL HUBS
+                    </span>
+                    <div className="flex flex-wrap gap-2 text-xs text-ink-80">
+                      <span className="bg-ink/5 px-2.5 py-1 border border-ink/10 text-[10px] tracking-wider font-mono">
+                        FB: /neelammadhu
+                      </span>
+                      <span className="bg-ink/5 px-2.5 py-1 border border-ink/10 text-[10px] tracking-wider font-mono">
+                        X: @neelammadhu
+                      </span>
+                      <span className="bg-ink/5 px-2.5 py-1 border border-ink/10 text-[10px] tracking-wider font-mono">
+                        IG: @neelammadhumudiraj
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <button 
+                    onClick={() => setIsPortfolioOpen(false)}
+                    className="w-full bg-saffron text-parchment text-xs font-semibold tracking-widest uppercase py-3 border border-saffron hover:bg-transparent hover:text-saffron transition-all duration-300"
+                  >
+                    RETURN TO OVERVIEW
+                  </button>
+                </div>
+
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

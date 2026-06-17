@@ -26,40 +26,40 @@ export default function StatsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 border-y border-[#3d3830]" style={{ borderTopWidth: '0.5px', borderBottomWidth: '0.5px' }}>
           
           {/* Cell 1: Total Votes */}
-          <div className="px-6 py-10 md:py-14 text-center border-b md:border-b-0 md:border-r border-[#3d3830] transition-colors duration-200 hover:bg-[#1a1813]" style={{ borderRightWidth: '0.5px', borderBottomWidth: '0.5px' }}>
-            <span className="text-xs font-sans tracking-[0.2em] text-[#7A7468] uppercase block mb-4">
+          <div className="px-6 py-10 md:py-14 text-center border-b md:border-b-0 md:border-r border-[#3d3830] transition-all duration-300 hover:bg-[#151411] cursor-default group" style={{ borderRightWidth: '0.5px', borderBottomWidth: '0.5px' }}>
+            <span className="text-xs font-sans tracking-[0.2em] text-[#7A7468] uppercase block mb-4 transition-colors duration-300 group-hover:text-saffron-mid">
               PEOPLE'S TRUST VOTES
             </span>
-            <span className="font-serif text-5xl lg:text-7xl font-semibold text-saffron-mid leading-none tracking-tight block">
+            <span className="font-serif text-5xl lg:text-7xl font-semibold text-saffron-mid leading-none tracking-tight block transition-transform duration-500 group-hover:scale-[1.03] group-hover:text-saffron">
               4,32,078
             </span>
-            <span className="text-[11px] font-sans tracking-widest text-[#FAF7F2]/50 block mt-4 uppercase">
+            <span className="text-[11px] font-sans tracking-widest text-[#FAF7F2]/50 block mt-4 uppercase transition-colors duration-300 group-hover:text-white/80">
               ACTUAL MANDATE POLL COUNT
             </span>
           </div>
 
           {/* Cell 2: Margin Gap */}
-          <div className="px-6 py-10 md:py-14 text-center border-b md:border-b-0 md:border-r border-[#3d3830] transition-colors duration-200 hover:bg-[#1a1813]" style={{ borderRightWidth: '0.5px', borderBottomWidth: '0.5px' }}>
-            <span className="text-xs font-sans tracking-[0.2em] text-[#7A7468] uppercase block mb-4">
+          <div className="px-6 py-10 md:py-14 text-center border-b md:border-b-0 md:border-r border-[#3d3830] transition-all duration-300 hover:bg-[#151411] cursor-default group" style={{ borderRightWidth: '0.5px', borderBottomWidth: '0.5px' }}>
+            <span className="text-xs font-sans tracking-[0.2em] text-[#7A7468] uppercase block mb-4 transition-colors duration-300 group-hover:text-white">
               COMPETITIVE MARGIN GAP
             </span>
-            <span className="font-serif text-5xl lg:text-7xl font-semibold text-white leading-none tracking-tight block">
+            <span className="font-serif text-5xl lg:text-7xl font-semibold text-white leading-none tracking-tight block transition-transform duration-500 group-hover:scale-[1.03] group-hover:text-saffron-mid">
               39,139
             </span>
-            <span className="text-[11px] font-sans tracking-widest text-[#FAF7F2]/50 block mt-4 uppercase">
+            <span className="text-[11px] font-sans tracking-widest text-[#FAF7F2]/50 block mt-4 uppercase transition-colors duration-300 group-hover:text-white/80">
               CLOSEST RUNNER THRESHOLD
             </span>
           </div>
 
           {/* Cell 3: Constituency Seat */}
-          <div className="px-6 py-10 md:py-14 text-center transition-colors duration-200 hover:bg-[#1a1813]">
-            <span className="text-xs font-sans tracking-[0.2em] text-[#7A7468] uppercase block mb-4">
+          <div className="px-6 py-10 md:py-14 text-center transition-all duration-300 hover:bg-[#151411] cursor-default group">
+            <span className="text-xs font-sans tracking-[0.2em] text-[#7A7468] uppercase block mb-4 transition-colors duration-300 group-hover:text-congress-green">
               HISTORIC CONSTITUENCY
             </span>
-            <span className="font-serif text-5xl lg:text-7xl font-semibold text-congress-green leading-none tracking-tight block">
+            <span className="font-serif text-5xl lg:text-7xl font-semibold text-congress-green leading-none tracking-tight block transition-transform duration-500 group-hover:scale-[1.03] group-hover:text-saffron">
               Medak
             </span>
-            <span className="text-[11px] font-sans tracking-widest text-[#FAF7F2]/50 block mt-4 uppercase">
+            <span className="text-[11px] font-sans tracking-widest text-[#FAF7F2]/50 block mt-4 uppercase transition-colors duration-300 group-hover:text-white/80">
               TELANGANA GENERAL ASSEMBLY SEAT
             </span>
           </div>

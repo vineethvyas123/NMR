@@ -54,11 +54,14 @@ export default function AboutSection() {
             
             <div className="divide-y divide-ink/10" style={{ contentVisibility: 'auto' }}>
               {FACT_ROWS.map((row) => (
-                <div key={row.label} className="py-3 flex flex-col sm:flex-row justify-between sm:items-baseline gap-1">
-                  <span className="font-sans text-[10px] tracking-widest text-ink-50 uppercase font-medium">
+                <div 
+                  key={row.label} 
+                  className="py-3 px-2 -mx-2 flex flex-col sm:flex-row justify-between sm:items-baseline gap-1 hover:bg-saffron-light/30 transition-all duration-300 rounded-[2px] cursor-default group/row"
+                >
+                  <span className="font-sans text-[10px] tracking-widest text-ink-50 uppercase font-medium transition-colors duration-200 group-hover/row:text-saffron">
                     {row.label}
                   </span>
-                  <span className="font-serif text-sm md:text-base text-ink-80 font-semibold text-right max-w-[280px]">
+                  <span className="font-serif text-sm md:text-base text-ink-80 font-semibold text-right max-w-[280px] transition-colors duration-200 group-hover/row:text-ink">
                     {row.value}
                   </span>
                 </div>

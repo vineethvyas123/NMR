@@ -80,19 +80,28 @@ export default function VisionSection() {
           {VISION_CARDS.map((card) => (
             <div 
               key={card.id} 
-              className="bg-[#ffffff] p-8 md:p-10 transition-all duration-300 hover:bg-parchment/30 group"
+              className="bg-[#ffffff] p-8 md:p-10 transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-[#FAF7F2] hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(40,30,20,0.08)] hover:z-10 relative overflow-hidden group border-b border-r border-[#FAF7F2]/10"
             >
+              {/* Elegant hover top hairline accent */}
+              <div className="absolute top-0 left-0 h-[2.5px] w-0 bg-saffron transition-all duration-500 ease-out group-hover:w-full" />
+
               {/* Saffron-light icon box */}
-              <div className="w-12 h-12 bg-saffron-light flex items-center justify-center mb-6 border border-saffron-mid/10 transition-colors duration-300 group-hover:bg-saffron group-hover:text-parchment">
-                <div className="transition-transform duration-300 group-hover:scale-110 group-hover:invert-0 group-hover:text-white">
+              <div className="w-12 h-12 bg-[#FCFAF7] flex items-center justify-center mb-6 border border-saffron-mid/10 transition-all duration-300 group-hover:bg-saffron group-hover:text-parchment group-hover:rotate-[3deg]">
+                <div className="transition-transform duration-300 group-hover:scale-110">
                   {renderIcon(card.id)}
                 </div>
               </div>
 
               {/* Card Title - Cormorant */}
-              <h3 className="font-serif text-xl md:text-2xl font-semibold text-ink mb-4 transition-colors duration-200 group-hover:text-saffron-mid">
-                {card.title}
-              </h3>
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="font-serif text-xl md:text-2xl font-semibold text-ink transition-colors duration-200 group-hover:text-saffron">
+                  {card.title}
+                </h3>
+                {/* Micro-interaction sliding arrow */}
+                <span className="text-saffron opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 font-mono text-sm">
+                  →
+                </span>
+              </div>
 
               {/* Card Body - DM Sans */}
               <p className="font-sans text-sm md:text-base text-ink-50 leading-relaxed group-hover:text-ink-80 transition-colors duration-200">

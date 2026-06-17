@@ -21,8 +21,8 @@ export default function MomentsSection() {
       category: "COMMUNITY ENGAGEMENT",
       date: "January 14, 2024",
       location: "Chitkul Gram Panchayat",
-      imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800",
-      description: "Engaging directly with over four hundred local residents and farming representatives of Chitkul to understand primary water sanitation and localized crop storage infrastructure requests.",
+      imageUrl: "https://images.unsplash.com/photo-1590075865003-e48277eb57ea?auto=format&fit=crop&q=80&w=800",
+      description: "Neelam Madhu Mudiraj engaging directly with over four hundred local village residents and farming representatives of Chitkul to understand primary water sanitation and localized crop storage infrastructure requests.",
       aspectClass: "aspect-[3/4]"
     },
     {
@@ -31,8 +31,8 @@ export default function MomentsSection() {
       category: "PUBLIC ADVOCACY",
       date: "February 22, 2024",
       location: "Patancheru Rural Outskirts",
-      imageUrl: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&q=80&w=800",
-      description: "A deep discussion with smallholder farmers from Patancheru concerning chemical run-offs from adjacent industrial units and advocating for immediate compensation protocols.",
+      imageUrl: "https://images.unsplash.com/photo-1590004953392-5aba2e72269a?auto=format&fit=crop&q=80&w=800",
+      description: "Neelam Madhu Mudiraj in a detailed dialogue with smallholder farmers from Patancheru, discussing mitigation for chemical industrial run-offs and advocating for immediate compensation protocols.",
       aspectClass: "aspect-[4/3]"
     },
     {
@@ -41,8 +41,8 @@ export default function MomentsSection() {
       category: "LOK SABHA CAMPAIGN",
       date: "April 18, 2024",
       location: "Medak Assembly Ground",
-      imageUrl: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=800",
-      description: "Addressing the massive general election rally in Medak. Outlining the secular developmental agenda and pledging key protective systems for women-led village cooperative groups.",
+      imageUrl: "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=80&w=800",
+      description: "Neelam Madhu Mudiraj addressing a massive general election campaign assembly in Medak, pledging to establish security protocols and interest-free credits for women-led self-help groups.",
       aspectClass: "aspect-[16/9]"
     },
     {
@@ -51,8 +51,8 @@ export default function MomentsSection() {
       category: "CONGRESS STRATEGY",
       date: "November 28, 2023",
       location: "Gandhi Bhavan, Hyderabad",
-      imageUrl: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
-      description: "Coordinating strategic backward class mobilization schemas alongside senior Congress high-command ministers to ensure equitable poll allocations across Telangana.",
+      imageUrl: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800",
+      description: "Neelam Madhu Mudiraj collaborating with senior Congress high-command ministers to map strategic backward class mobilization and campaign outreach programs across Telangana.",
       aspectClass: "aspect-[1/1]"
     },
     {
@@ -61,8 +61,8 @@ export default function MomentsSection() {
       category: "ACCESSIBLE OFFICE",
       date: "Weekly Consultation",
       location: "Patancheru Main Office",
-      imageUrl: "https://images.unsplash.com/photo-1521791136364-7221fdb3d95f?auto=format&fit=crop&q=80&w=800",
-      description: "A weekly interactive consultation setup where common citizens present family welfare, educational subsidy, and pension grievances directly without any proxy barriers.",
+      imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800",
+      description: "Neelam Madhu Mudiraj presiding over his weekly open consultation desk, where common citizens present family welfare requests, educational subsidies, and pension grievances directly without proxy barriers.",
       aspectClass: "aspect-[3/4]"
     },
     {
@@ -72,8 +72,78 @@ export default function MomentsSection() {
       date: "March 05, 2024",
       location: "Sangareddy District Centre",
       imageUrl: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800",
-      description: "Building an unwavering electoral and social coalition with scheduled caste community representatives to defend basic tenancy rights and equal developmental benefits.",
+      description: "Neelam Madhu Mudiraj forging solid coalitions with SC/ST community delegates to safeguard agrarian tenancy rights and ensure equitable regional infrastructure disbursements.",
       aspectClass: "aspect-[4/3]"
+    },
+    {
+      id: "moment-7",
+      title: "Telangana Youth Summit",
+      category: "YOUTH EMPOWERMENT",
+      date: "May 02, 2024",
+      location: "Sangareddy Outskirts",
+      imageUrl: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=800",
+      description: "Neelam Madhu Mudiraj speaking with progressive youth councils and unemployed graduates to detail modern technical apprenticeships and local manufacturing job guarantees.",
+      aspectClass: "aspect-[16/10]"
+    },
+    {
+      id: "moment-8",
+      title: "Rural Infrastructure Audit",
+      category: "CIVIC AUDIT",
+      date: "December 12, 2023",
+      location: "Chitkul Village",
+      imageUrl: "https://images.unsplash.com/photo-1605647540924-852290f6b0d5?auto=format&fit=crop&q=80&w=800",
+      description: "Neelam Madhu Mudiraj leading a transparent physical audit of drinking water purification filters alongside local engineering experts and village elders in Chitkul.",
+      aspectClass: "aspect-[4/3]"
+    },
+    {
+      id: "moment-9",
+      title: "Medak Women's Co-Op Meet",
+      category: "GENDER INDEPENDENCE",
+      date: "April 05, 2024",
+      location: "Ramachandrapuram",
+      imageUrl: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&q=80&w=800",
+      description: "Neelam Madhu Mudiraj presenting microfinance grants and interest-free support directly to local village leaders of women-led livestock and agricultural cooperative societies.",
+      aspectClass: "aspect-[3/4]"
+    },
+    {
+      id: "moment-10",
+      title: "NMM Followers Youth Slogan Procession",
+      category: "COMMUNITY INITIATIVE",
+      date: "May 10, 2024",
+      location: "Siddipet Road, Patancheru",
+      imageUrl: "https://images.unsplash.com/photo-1596785532551-6ca37dedf72d?auto=format&fit=crop&q=80&w=800",
+      description: "Vibrant community flags and dynamic digital banner display organized by NMM Followers during the massive state general outreach campaign. Culturally centered around local welfare and backward class educational empowerment representing the core NMM supporters' visual legacy.",
+      aspectClass: "aspect-[4/3]"
+    },
+    {
+      id: "moment-11",
+      title: "Sankranti Cultural Utsav Meet",
+      category: "FESTIVE TRADITIONS",
+      date: "January 15, 2024",
+      location: "Chitkul Village Gardens",
+      imageUrl: "https://images.unsplash.com/photo-1621640161176-80f47eff8d5f?auto=format&fit=crop&q=80&w=800",
+      description: "NMM Followers hosting over five hundred families for a traditional harvest celebration, prioritizing local rural culture while presenting interest-free education support funds directly to village youth.",
+      aspectClass: "aspect-[3/4]"
+    },
+    {
+      id: "moment-12",
+      title: "Grassroots Medical & Preventative Welfare Camp",
+      category: "PUBLIC WELFARE",
+      date: "March 18, 2024",
+      location: "Mudiraj Colony, Patancheru",
+      imageUrl: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800",
+      description: "A comprehensive local health diagnostic checking and relief camp organized by the 'NMM Followers' Facebook network, distributing free basic wellness kits and children's welfare grants directly to agrarian families.",
+      aspectClass: "aspect-[1/1]"
+    },
+    {
+      id: "moment-13",
+      title: "Patancheru Youth Sports League Launcher",
+      category: "YOUTH OUTREACH",
+      date: "February 10, 2024",
+      location: "Sandalwood Grounds, Ramachandrapuram",
+      imageUrl: "https://images.unsplash.com/photo-1577416412292-747c6607f055?auto=format&fit=crop&q=80&w=800",
+      description: "Supporters inaugurating the premier local youth tournament sponsored by the NMM Followers group, advocating for regional sports infrastructure development.",
+      aspectClass: "aspect-[16/10]"
     }
   ];
 
@@ -153,6 +223,35 @@ export default function MomentsSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Facebook Link Banner */}
+        <div className="mt-16 bg-[#ffffff] border border-saffron-mid/20 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6" style={{ borderWidth: '0.5px' }}>
+          <div className="space-y-1.5 text-center md:text-left">
+            <span className="text-[10px] font-mono tracking-widest text-saffron uppercase block">
+              LIVE DIGITAL ARCHIVE
+            </span>
+            <h4 className="text-xl font-serif font-bold text-ink">
+              Follow the NMM Followers Photographic Feed
+            </h4>
+            <p className="text-xs text-ink-50 max-w-2xl leading-relaxed">
+              Explore unfiltered daily snapshots, local village meetings, youth processions, and festive moments uploaded directly by our ground support team on the official Facebook photo archive.
+            </p>
+          </div>
+          <a 
+            href="https://www.facebook.com/nmmfollowers/photos/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whitespace-nowrap bg-saffron text-parchment hover:bg-[#1877F2] text-xs font-semibold tracking-widest uppercase px-6 py-3.5 border border-transparent transition-all duration-300 flex items-center gap-2 group shadow-sm shrink-0"
+            id="facebook-photos-external-button"
+          >
+            <span>VISIT FACEBOOK ARCHIVE</span>
+            <svg className="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
         </div>
 
       </div>

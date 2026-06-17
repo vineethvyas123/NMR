@@ -9,6 +9,7 @@ import MomentsSection from "./components/MomentsSection";
 import CommunitySection from "./components/CommunitySection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import ScrollReveal from "./components/ScrollReveal";
 
 export default function App() {
   
@@ -84,25 +85,39 @@ export default function App() {
       />
 
       {/* 3. ABOUT (GRASSROOTS LEADERSHIP) */}
-      <AboutSection />
+      <ScrollReveal>
+        <AboutSection />
+      </ScrollReveal>
 
       {/* 4. POLITICAL JOURNEY TIMELINE */}
-      <TimelineSection />
+      <ScrollReveal>
+        <TimelineSection />
+      </ScrollReveal>
 
       {/* 5. ELECTION STATS (TOTAL VOTES, MARGIN, CONSTITUENCY) */}
-      <StatsSection />
+      <ScrollReveal>
+        <StatsSection />
+      </ScrollReveal>
 
       {/* 6. VISION & CORE PRIORITIES GRID */}
-      <VisionSection />
+      <ScrollReveal>
+        <VisionSection />
+      </ScrollReveal>
 
       {/* NEW: PUBLIC LIFE IN MOMENTS (MASONRY & LIGHTBOX) */}
-      <MomentsSection />
+      <ScrollReveal>
+        <MomentsSection />
+      </ScrollReveal>
 
       {/* 7. COMMUNITY CONNECT ALLIANCE PROFILE */}
-      <CommunitySection />
+      <ScrollReveal>
+        <CommunitySection />
+      </ScrollReveal>
 
       {/* 8. MEDIA & REFINED CONTACT OUTREACH */}
-      <ContactSection />
+      <ScrollReveal>
+        <ContactSection />
+      </ScrollReveal>
 
       {/* 9. PREMIUM SINGLE LINE FOOTER */}
       <Footer />

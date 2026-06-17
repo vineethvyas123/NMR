@@ -44,7 +44,7 @@ export default function Navigation({ onContactClick }: NavigationProps) {
           </div>
           <div className="flex flex-col">
             <span className="font-serif tracking-wide text-sm md:text-base font-semibold uppercase text-ink">
-              N. M. Mudiraj
+              Neelam Madhu Mudiraj
             </span>
             <span className="text-[9px] md:text-[10px] tracking-widest text-ink-50 uppercase -mt-1">
               Peoples Leader • Medak
