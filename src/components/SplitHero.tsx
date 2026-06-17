@@ -6,17 +6,79 @@ interface SplitHeroProps {
   onJourneyClick: () => void;
 }
 
+// Framer Motion Entrance Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      damping: 24,
+      stiffness: 110,
+    },
+  },
+};
+
+const portalVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      damping: 28,
+      stiffness: 90,
+      delay: 0.3,
+    },
+  },
+};
+
+const statsGridVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      damping: 25,
+      stiffness: 100,
+      delay: 0.5,
+    },
+  },
+};
+
 export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProps) {
   const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
+
+  // The beautiful high-resolution campaign photograph matching the attached smiling Indian man in a white shirt
+  const heroImageSrc = "https://res.cloudinary.com/dqghfdklb/image/upload/v1781681541/Neelam_Madhu_e9dssy.jpg";
+  const lightboxImageSrc = "https://res.cloudinary.com/dqghfdklb/image/upload/v1781681541/Neelam_Madhu_e9dssy.jpg";
 
   return (
     <section className="relative min-h-screen pt-16 grid grid-cols-1 lg:grid-cols-12 overflow-hidden bg-parchment" id="hero">
       
       {/* LEFT SECTION (7 COLS on lg) - Content Panel */}
-      <div className="lg:col-span-7 flex flex-col justify-center px-6 md:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 select-none">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="lg:col-span-7 flex flex-col justify-center px-6 md:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 select-none"
+      >
         
         {/* INC Congress green Ribbon Badge */}
-        <div className="mb-6 flex items-center space-x-3">
+        <motion.div variants={itemVariants} className="mb-6 flex items-center space-x-3">
           <div className="relative inline-flex items-center space-x-2 bg-congress-green text-parchment text-[10px] md:text-xs font-semibold uppercase tracking-widest px-4 py-2 shadow-sm border border-congress-green">
             <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
             <span>Indian National Congress</span>
@@ -29,27 +91,27 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
             <div className="w-1/3 bg-white border-y border-ink-50/10" />
             <div className="w-1/3 bg-congress-green" />
           </div>
-        </div>
+        </motion.div>
 
         {/* Eyebrow label */}
-        <span className="text-xs md:text-sm font-semibold tracking-[0.3em] text-ink-50 uppercase mb-4 block">
+        <motion.span variants={itemVariants} className="text-xs md:text-sm font-semibold tracking-[0.3em] text-ink-50 uppercase mb-4 block">
           CONGRESS STATE LEADER • TELANGANA
-        </span>
+        </motion.span>
 
         {/* Large serif display name */}
-        <h1 className="text-5xl md:text-6xl xl:text-7.5xl font-serif text-ink tracking-tight leading-[1.05] mb-6 font-semibold">
+        <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl xl:text-7.5xl font-serif text-ink tracking-tight leading-[1.05] mb-6 font-semibold">
           Neelam <br />
           <span className="font-serif italic text-saffron font-normal">Madhu</span> <br />
           Mudiraj
-        </h1>
+        </motion.h1>
 
         {/* Italic Title Accent */}
-        <p className="font-serif italic text-lg md:text-xl lg:text-2xl text-ink-80 font-light mb-8 max-w-xl leading-relaxed border-l-2 border-saffron-mid/30 pl-4">
+        <motion.p variants={itemVariants} className="font-serif italic text-lg md:text-xl lg:text-2xl text-ink-80 font-light mb-8 max-w-xl leading-relaxed border-l-2 border-saffron-mid/30 pl-4">
           "A self-made grassroots leader, raising the powerful voice of backward classes, marginalized youth, and regional farmers."
-        </p>
+        </motion.p>
 
         {/* Action Button Segment */}
-        <div className="flex flex-wrap gap-4 mb-12">
+        <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-12">
           <button
             onClick={onJoinClick}
             className="bg-saffron text-parchment text-xs font-semibold tracking-widest uppercase px-8 py-4 border border-saffron hover:bg-parchment hover:text-saffron transition-all duration-300 shadow-md cursor-pointer"
@@ -63,10 +125,10 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
           >
             READ POLITICAL JOURNEY
           </button>
-        </div>
+        </motion.div>
 
         {/* Powerful quote with hair-border split-offset */}
-        <div className="pt-8 border-t border-ink/10 relative" style={{ borderTopWidth: '0.5px' }}>
+        <motion.div variants={itemVariants} className="pt-8 border-t border-ink/10 relative" style={{ borderTopWidth: '0.5px' }}>
           <span className="absolute -top-3 left-0 bg-parchment px-3 font-serif italic text-xs text-saffron">
             The Commitment
           </span>
@@ -76,8 +138,8 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
           <span className="block text-xs font-semibold tracking-widest text-ink-50 uppercase mt-2">
             — NEELAM MADHU MUDIRAJ
           </span>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* RIGHT SECTION (5 COLS on lg) - Aesthetic Portal panel */}
       <div className="lg:col-span-5 bg-ink relative min-h-[450px] lg:min-h-0 flex flex-col justify-between p-8 md:p-12 lg:p-16 select-none overflow-hidden group">
@@ -110,7 +172,12 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
         </div>
 
         {/* Centered Decorative Monogram Placeholder for Photo */}
-        <div className="my-auto flex flex-col items-center justify-center relative py-12 z-10">
+        <motion.div 
+          variants={portalVariants}
+          initial="hidden"
+          animate="visible"
+          className="my-auto flex flex-col items-center justify-center relative py-12 z-10"
+        >
           {/* Framed Circle */}
           <div 
             onClick={() => setIsPortfolioOpen(true)}
@@ -124,7 +191,7 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
             {/* Inner portrait container of Neelam Madhu Mudiraj */}
             <div className="w-full h-full rounded-full overflow-hidden relative border border-saffron/20 bg-ink">
               <img 
-                src="https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?auto=format&fit=crop&q=80&w=600"
+                src={heroImageSrc}
                 alt="Neelam Madhu Mudiraj dynamic campaign portrait"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-105"
@@ -144,10 +211,16 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
               [ CLICK TO ENLARGE PORTRAIT ]
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Floating Stats - Grid Layout with clear fine lines */}
-        <div className="relative z-10 w-full bg-[#FAF7F2] border border-ink/10 p-4 shadow-xl grid grid-cols-3 text-center transition-transform duration-500 group-hover:translate-y-[-4px] group-hover:shadow-2xl" style={{ borderWidth: '0.5px' }}>
+        <motion.div 
+          variants={statsGridVariants}
+          initial="hidden"
+          animate="visible"
+          className="relative z-10 w-full bg-[#FAF7F2] border border-ink/10 p-4 shadow-xl grid grid-cols-3 text-center transition-transform duration-500 group-hover:translate-y-[-4px] group-hover:shadow-2xl" 
+          style={{ borderWidth: '0.5px' }}
+        >
           
           <div className="border-r border-ink/15 py-1">
             <span className="block text-2xl md:text-3xl font-serif text-saffron font-bold leading-none">
@@ -176,7 +249,7 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
             </span>
           </div>
 
-        </div>
+        </motion.div>
 
       </div>
 
@@ -202,7 +275,7 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
               {/* Image Column */}
               <div className="relative h-72 md:h-[500px] bg-ink">
                 <img 
-                  src="https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?auto=format&fit=crop&q=80&w=800"
+                  src={lightboxImageSrc}
                   alt="Neelam Madhu Mudiraj Close Up Portfolio Photograph"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center"
