@@ -60,7 +60,7 @@ export default function AboutSection() {
   const [activeTab, setActiveTab] = useState<"political" | "personal">("political");
 
   return (
-    <section className="py-20 md:py-28 bg-parchment border-b border-ink/5" id="about" style={{ borderBottomWidth: '0.5px' }}>
+    <section className="pt-16 md:pt-24 pb-10 md:pb-12 bg-parchment border-b border-ink/5" id="about" style={{ borderBottomWidth: '0.5px' }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Editorial Section Header */}
