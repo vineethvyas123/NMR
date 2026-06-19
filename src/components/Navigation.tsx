@@ -62,16 +62,17 @@ export default function Navigation({ onContactClick }: NavigationProps) {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Brand Logo - Classy Serif */}
-        <a href="#" className="flex items-center space-x-3 group">
-          <div className="w-8 h-8 md:w-9 md:h-9 border border-saffron flex items-center justify-center font-serif text-sm md:text-base font-semibold text-saffron bg-saffron-light">
-            NM
+        <a href="#" className="flex items-center space-x-3.5 group">
+          <div className="h-8 md:h-9 px-2 md:px-2.5 border border-saffron flex items-center justify-center font-serif text-xs md:text-sm font-bold tracking-wider text-saffron bg-saffron-light shadow-[inset_0_0_8px_rgba(200,100,10,0.05)] rounded-sm group-hover:bg-saffron group-hover:text-parchment transition-all duration-300">
+            NMR
           </div>
           <div className="flex flex-col">
-            <span className="font-serif tracking-wide text-sm md:text-base font-semibold uppercase text-ink">
-              Neelam Madhu Mudiraj
+            <span className="font-serif tracking-wide text-sm md:text-base font-bold uppercase text-ink group-hover:text-saffron transition-colors duration-300 leading-snug">
+              Neelam Madhu <span className="text-saffron">Mudiraj</span>
             </span>
-            <span className="text-[9px] md:text-[10px] tracking-widest text-ink-50 uppercase -mt-1">
-              Peoples Leader • Medak
+            <span className="text-[9px] md:text-[10px] tracking-[0.18em] text-ink-50 uppercase mt-0.5 font-sans font-semibold flex items-center gap-1.5 transition-colors duration-300 group-hover:text-ink-80">
+              <span className="w-1 h-1 rounded-full bg-saffron animate-pulse" />
+              PEOPLE'S LEADER • MEDAK
             </span>
           </div>
         </a>
