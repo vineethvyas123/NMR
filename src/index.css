@@ -1,16 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+:root {
+  --saffron: #C8640A;
+  --saffron-mid: #E8934A;
+  --saffron-light: #F9EBD9;
+  --ink: #0F0E0B;
+  --ink-80: #2A2720;
+  --ink-50: #7A7468;
+  --parchment: #FAF7F2;
+  --parchment-dark: #F0EBE0;
+  --congress-green: #1A5E38;
+  --theme-white: #ffffff;
+}
+
+.dark {
+  --saffron: #FAB872;
+  --saffron-mid: #E8934A;
+  --saffron-light: #2A1D0E;
+  --ink: #FAF7F2;
+  --ink-80: #DFD9CF;
+  --ink-50: #A39B8E;
+  --parchment: #0E0D0B;
+  --parchment-dark: #191714;
+  --congress-green: #29B464;
+  --theme-white: #161512;
+}
+
 @theme {
-  --color-saffron: #C8640A;
-  --color-saffron-mid: #E8934A;
-  --color-saffron-light: #F9EBD9;
-  --color-ink: #0F0E0B;
-  --color-ink-80: #2A2720;
-  --color-ink-50: #7A7468;
-  --color-parchment: #FAF7F2;
-  --color-parchment-dark: #F0EBE0;
-  --color-congress-green: #1A5E38;
+  --color-saffron: var(--saffron);
+  --color-saffron-mid: var(--saffron-mid);
+  --color-saffron-light: var(--saffron-light);
+  --color-ink: var(--ink);
+  --color-ink-80: var(--ink-80);
+  --color-ink-50: var(--ink-50);
+  --color-parchment: var(--parchment);
+  --color-parchment-dark: var(--parchment-dark);
+  --color-congress-green: var(--congress-green);
+  --color-theme-white: var(--theme-white);
 
   --font-serif: "Cormorant Garamond", Georgia, sans-serif;
   --font-sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -20,6 +47,13 @@ html {
   scroll-behavior: smooth;
   background-color: var(--color-parchment);
   color: var(--color-ink-80);
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body, nav, section, footer, .theme-card, h1, h2, h3, h4, p, span, a, button, input, textarea {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Immersive UI Specific Custom Fine Enhancements */

@@ -99,10 +99,8 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
         </motion.span>
 
         {/* Large serif display name */}
-        <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl xl:text-7.5xl font-serif text-ink tracking-tight leading-[1.05] mb-6 font-semibold">
-          Neelam <br />
-          <span className="font-serif italic text-saffron font-normal">Madhu</span> <br />
-          Mudiraj
+        <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-6xl font-serif text-ink tracking-tight leading-none mb-6 font-semibold whitespace-nowrap">
+          Neelam <span className="font-serif italic text-saffron font-normal">Madhu</span> Mudiraj
         </motion.h1>
 
         {/* Italic Title Accent */}

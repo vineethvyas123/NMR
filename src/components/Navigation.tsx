@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Sun, Moon } from "lucide-react";
 
 interface NavigationProps {
   onContactClick: () => void;
@@ -7,6 +8,29 @@ interface NavigationProps {
 export default function Navigation({ onContactClick }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("nmm-theme");
+      if (savedTheme === "dark" || savedTheme === "light") {
+        return savedTheme;
+      }
+    }
+    return "light";
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+    localStorage.setItem("nmm-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,6 +88,21 @@ export default function Navigation({ onContactClick }: NavigationProps) {
               <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-saffron transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
+          
+          {/* Elegant Theme Toggle Button */}
+          <button
+            onClick={toggleTheme}
+            className="text-ink-80 hover:text-saffron p-2 transition-colors duration-300 rounded-full hover:bg-ink-50/10 focus:outline-none flex items-center justify-center cursor-pointer"
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+            id="theme-toggle-desktop"
+          >
+            {theme === "light" ? (
+              <Moon className="w-4 h-4" strokeWidth={1.8} />
+            ) : (
+              <Sun className="w-4 h-4 text-saffron-mid animate-pulse" strokeWidth={1.8} />
+            )}
+          </button>
+
           <button
             onClick={onContactClick}
             className="border border-saffron text-[11px] font-medium tracking-widest uppercase px-4 py-2 hover:bg-saffron hover:text-parchment transition-all duration-300"
@@ -73,12 +112,26 @@ export default function Navigation({ onContactClick }: NavigationProps) {
           </button>
         </div>
 
-        {/* Mobile Menu Button - Fine Inline Custom Tool SVG */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden text-ink p-1 focus:outline-none"
-          aria-label="Toggle Menu"
-        >
+        {/* Mobile Theme Toggle & Menu Hamburger Controls */}
+        <div className="flex items-center space-x-4 lg:hidden">
+          <button
+            onClick={toggleTheme}
+            className="text-ink-80 hover:text-saffron p-2 transition-colors duration-300 rounded-full hover:bg-ink-50/10 focus:outline-none flex items-center justify-center cursor-pointer"
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+            id="theme-toggle-mobile"
+          >
+            {theme === "light" ? (
+              <Moon className="w-5 h-5" strokeWidth={1.8} />
+            ) : (
+              <Sun className="w-5 h-5 text-saffron-mid animate-pulse" strokeWidth={1.8} />
+            )}
+          </button>
+
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-ink p-1 focus:outline-none"
+            aria-label="Toggle Menu"
+          >
           {isMobileMenuOpen ? (
             // Close icon path
             <svg
@@ -110,6 +163,7 @@ export default function Navigation({ onContactClick }: NavigationProps) {
             </svg>
           )}
         </button>
+        </div>
       </div>
 
       {/* Mobile Menu Panel */}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "motion/react";
 
 interface MomentItem {
   id: string;
@@ -148,7 +149,7 @@ export default function MomentsSection() {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-[#FAF7F2] border-b border-ink/5" id="moments">
+    <section className="py-20 md:py-28 bg-parchment border-b border-ink/5" id="moments">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Editorial Section Header */}
@@ -174,14 +175,16 @@ export default function MomentsSection() {
         {/* 3-Column Masonry Grid utilizing CSS Column Count (Best for fluid heights) */}
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           {moments.map((moment) => (
-            <div 
+            <motion.div 
               key={moment.id}
               onClick={() => setActiveMoment(moment)}
-              className="break-inside-avoid bg-[#ffffff] border border-ink/10 p-4 transition-all duration-300 hover:border-saffron/40 hover:-translate-y-1 cursor-pointer group"
+              whileHover={{ y: -6, scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="break-inside-avoid bg-theme-white border border-ink/10 p-4 transition-colors duration-300 hover:border-saffron/40 cursor-pointer group"
               style={{ borderWidth: "0.5px" }}
             >
               {/* Image Frame */}
-              <div className={`overflow-hidden bg-[#FAF7F2] relative ${moment.aspectClass} border-b border-ink/5 mb-4`} style={{ borderBottomWidth: "0.5px" }}>
+              <div className={`overflow-hidden bg-parchment relative ${moment.aspectClass} border-b border-ink/5 mb-4`} style={{ borderBottomWidth: "0.5px" }}>
                 <img 
                   src={moment.imageUrl} 
                   alt={moment.title} 
@@ -190,7 +193,7 @@ export default function MomentsSection() {
                 />
                 
                 {/* Floating Category Tag inside image */}
-                <div className="absolute top-3 left-3 bg-[#FAF7F2] border border-ink/10 px-2.5 py-1 text-[8px] font-mono tracking-widest uppercase text-ink-80" style={{ borderWidth: "0.5px" }}>
+                <div className="absolute top-3 left-3 bg-parchment border border-ink/10 px-2.5 py-1 text-[8px] font-mono tracking-widest uppercase text-ink-80" style={{ borderWidth: "0.5px" }}>
                   {moment.category}
                 </div>
               </div>
@@ -221,7 +224,7 @@ export default function MomentsSection() {
                   </svg>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

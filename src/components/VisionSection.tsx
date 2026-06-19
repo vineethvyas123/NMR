@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { VISION_CARDS } from "../data";
 
 export default function VisionSection() {
@@ -58,7 +59,7 @@ export default function VisionSection() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-[#ffffff] border-b border-ink/5" id="priorities">
+    <section className="py-20 md:py-28 bg-theme-white border-b border-ink/5" id="priorities">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Editorial Section Header */}
@@ -78,15 +79,17 @@ export default function VisionSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10 border border-ink/10" style={{ borderWidth: '0.5px' }}>
           
           {VISION_CARDS.map((card) => (
-            <div 
+            <motion.div 
               key={card.id} 
-              className="bg-[#ffffff] p-8 md:p-10 transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-[#FAF7F2] hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(40,30,20,0.08)] hover:z-10 relative overflow-hidden group border-b border-r border-[#FAF7F2]/10"
+              whileHover={{ y: -8, scale: 1.015 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="bg-theme-white p-8 md:p-10 transition-colors duration-300 hover:bg-gradient-to-br hover:from-theme-white hover:to-parchment hover:shadow-[0_12px_30px_rgba(40,30,20,0.08)] hover:z-10 relative overflow-hidden group border-b border-r border-[#FAF7F2]/10 cursor-pointer"
             >
               {/* Elegant hover top hairline accent */}
               <div className="absolute top-0 left-0 h-[2.5px] w-0 bg-saffron transition-all duration-500 ease-out group-hover:w-full" />
 
               {/* Saffron-light icon box */}
-              <div className="w-12 h-12 bg-[#FCFAF7] flex items-center justify-center mb-6 border border-saffron-mid/10 transition-all duration-300 group-hover:bg-saffron group-hover:text-parchment group-hover:rotate-[3deg]">
+              <div className="w-12 h-12 bg-parchment flex items-center justify-center mb-6 border border-saffron-mid/10 transition-all duration-300 group-hover:bg-saffron group-hover:text-parchment group-hover:rotate-[3deg]">
                 <div className="transition-transform duration-300 group-hover:scale-110">
                   {renderIcon(card.id)}
                 </div>
@@ -107,7 +110,7 @@ export default function VisionSection() {
               <p className="font-sans text-sm md:text-base text-ink-50 leading-relaxed group-hover:text-ink-80 transition-colors duration-200">
                 {card.description}
               </p>
-            </div>
+            </motion.div>
           ))}
 
         </div>
