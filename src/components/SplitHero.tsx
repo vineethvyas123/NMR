@@ -67,7 +67,7 @@ export default function SplitHero({ onJoinClick, onJourneyClick }: SplitHeroProp
   const lightboxImageSrc = "https://res.cloudinary.com/dqghfdklb/image/upload/v1781681541/Neelam_Madhu_e9dssy.jpg";
 
   return (
-    <section className="relative min-h-screen pt-16 grid grid-cols-1 lg:grid-cols-12 overflow-hidden bg-parchment" id="hero">
+    <section className="relative min-h-screen pt-20 md:pt-24 lg:pt-28 grid grid-cols-1 lg:grid-cols-12 overflow-hidden bg-parchment" id="hero">
       
       {/* LEFT SECTION (7 COLS on lg) - Content Panel */}
       <motion.div 

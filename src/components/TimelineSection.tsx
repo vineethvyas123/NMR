@@ -2,7 +2,7 @@ import { TIMELINE_DATA } from "../data";
 
 export default function TimelineSection() {
   return (
-    <section className="py-20 md:py-28 bg-parchment border-b border-ink/5" id="journey" style={{ borderBottomWidth: '0.5px' }}>
+    <section className="pt-8 md:pt-12 pb-20 md:pb-28 bg-parchment border-b border-ink/5" id="journey" style={{ borderBottomWidth: '0.5px' }}>
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         
         {/* Header */}
